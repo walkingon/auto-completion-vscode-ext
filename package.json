@@ -3,7 +3,7 @@
   "displayName": "AutoCompletion",
   "description": "AI自动补全文字、代码，自定义Prompt方式等",
   "version": "0.7.0",
-  "publisher": "kouyq",
+  "publisher": "kouyaqi",
   "icon": "icon.png",
   "repository": {
     "type": "git",
