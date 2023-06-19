@@ -5,7 +5,10 @@
   "version": "0.7.0",
   "publisher": "kouyq",
   "icon": "icon.png",
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/walkingon/auto-completion-vscode-ext.git"
+  },
   "engines": {
     "vscode": "^1.79.0"
   },
