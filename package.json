@@ -1,0 +1,129 @@
+{
+  "name": "auto-completion",
+  "displayName": "AutoCompletion",
+  "description": "AI自动补全文字、代码，自定义Prompt方式等",
+  "version": "0.7.0",
+  "publisher": "kouyq",
+  "icon": "icon.png",
+  "repository": {},
+  "engines": {
+    "vscode": "^1.79.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "AutoCompletion",
+      "properties": {
+        "API.url": {
+          "type": "string",
+          "default": "https://oa.api2d.site/v1/chat/completions",
+          "description": "网络请求GPT聊天API的完整URL"
+        },
+        "API.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "用于API请求的key"
+        },
+        "GPT.model":{
+          "type":"string",
+          "description": "语言模型",
+          "enum": [
+            "gpt-3.5-turbo",
+            "gpt-3.5-turbo-16k",
+            "gpt-3.5-turbo-0613",
+            "gpt-3.5-turbo-16k-0613",
+            "gpt-4",
+            "gpt-4-32k",
+            "gpt-4-0613",
+            "gpt-4-32k-0613"
+          ],
+          "default": "gpt-3.5-turbo"
+        },
+        "GPT.temperature":{
+          "type":"number",
+          "description": "采样温度，介于 0 和 2 之间。较高的值（如 0.8）将使输出更加随机，而较低的值（如 0.2）将使其更加集中和确定",
+          "default": 1
+        },
+        "GPT.max_tokens":{
+          "type":"integer",
+          "description": "聊天完成中生成的最大令牌数",
+          "default": 2048
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "prompt",
+        "title": "询问AI选中的内容",
+        "shortTitle": "询问AI",
+        "category": "auto-completion"
+      },
+      {
+        "command": "codeCompletion",
+        "title": "补全选中的代码",
+        "shortTitle": "代码补全",
+        "category": "auto-completion"
+      },
+      {
+        "command": "codeExplain",
+        "title": "解释选中的代码",
+        "shortTitle": "代码解释",
+        "category": "auto-completion"
+      },
+      {
+        "command": "custom",
+        "title": "自定义Prompt方式",
+        "shortTitle": "自定义",
+        "category": "auto-completion"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "prompt",
+          "when": "editorTextFocus",
+          "group": "AutoCompletion"
+        },
+        {
+          "command": "codeCompletion",
+          "when": "editorTextFocus",
+          "group": "AutoCompletion"
+        },
+        {
+          "command": "codeExplain",
+          "when": "editorTextFocus",
+          "group": "AutoCompletion"
+        },
+        {
+          "command": "custom",
+          "when": "editorTextFocus",
+          "group": "AutoCompletion"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "@types/vscode": "^1.79.0",
+    "@vscode/test-electron": "^2.3.2",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "eventsource-parser": "^1.0.0",
+    "node-fetch": "^2.6.11"
+  }
+}
