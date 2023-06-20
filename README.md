@@ -5,7 +5,7 @@
 AI自动补全内容，在编辑器中选中文本内容，右键可以询问AI、代码补全、代码解释、自定义Promot方式。
 
 <video controls>
-    <source src="./vs code autocompletion ext show.mp4" type="video/mp4">
+    <source src="https://walkingon.github.io/videos/vscode-ext-autocompletion-show.mp4" type="video/mp4">
 </video>
 
 ## 特性
