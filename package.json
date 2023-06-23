@@ -2,7 +2,7 @@
   "name": "auto-completion",
   "displayName": "AutoCompletion",
   "description": "AI自动补全文字、代码，自定义Prompt方式等",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "publisher": "kouyaqi",
   "icon": "icon.png",
   "repository": {
@@ -23,7 +23,7 @@
       "properties": {
         "API.url": {
           "type": "string",
-          "default": "https://oa.api2d.site/v1/chat/completions",
+          "default": "https://这里替换为可用站点/v1/chat/completions",
           "description": "网络请求GPT聊天API的完整URL"
         },
         "API.apiKey": {

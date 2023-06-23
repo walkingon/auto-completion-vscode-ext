@@ -53,9 +53,16 @@ async function chat(params, finishCb, streamCb) {
             })
         }
     ).catch((err) => {
-        console.error(err)
+        console.log(err)
+        if(err.code == 'ECONNRESET'){
+            vscode.window.showErrorMessage('AutoCompletion: API URL请求失败，请更换站点')
+        }else{
+            vscode.window.showErrorMessage(`AutoCompletion: ${err.message}`)
+        }
     })
-    encoderStreamData(response.body, finishCb, streamCb)
+    if(response){
+        encoderStreamData(response.body, finishCb, streamCb)
+    }
 }
 
 /**

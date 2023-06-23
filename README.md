@@ -16,7 +16,7 @@ AI自动补全内容，在编辑器中选中文本内容，右键可以询问AI�
 
 ## 要求
 
-- 需要从界面“设置>用户>扩展>AutoCompletion”，设置“Api Key”、“Url”之后，才能使用。
+- 需要对本扩展进行设置，设置“Api Key”、“Url”之后，才能使用。
 
 ## 扩展设置
 
@@ -27,13 +27,3 @@ AI自动补全内容，在编辑器中选中文本内容，右键可以询问AI�
 - `GPT.model`: 设置GPT语言模型。
 - `GPT.temperature`: 设置GPT模型temperature参数。
 - `GPT.max_tokens`: 设置模型生成的最大tokens数
-
-## 已知问题
-
-none
-
----
-
-## 更多信息
-
-none
